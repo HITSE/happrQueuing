@@ -5,7 +5,8 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">^-^Happy Queuing!!!^-^</string>
     <string name="join">快来加入排队吧！</string>
-    <string name="basic_path">http://192.168.17.16/se/</string>
-    
+    <string name="send">快发送吧</string>
+    <string name="cancel">不想吃了</string>
+    <string name="detial">详情</string>
 
 </resources>

@@ -3,19 +3,19 @@
 <LinearLayout android:layout_width="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" 
-    android:layout_height="wrap_content"
-    android:id="@+id/myListItem" 
+    android:layout_height="fill_parent"
+    android:id="@+id/myListItem2" 
     android:paddingBottom="3dip"
     android:paddingLeft="10dip">
     <TextView android:layout_height="wrap_content"
         android:layout_width="fill_parent" 
-        android:id="@+id/itemTitle"
-        android:textSize="20dip"
-        android:textColor="#FF7F50">
+        android:id="@+id/itemTitle2"
+        android:textColor="#008B8B">
     </TextView>
     <TextView android:layout_height="wrap_content"
         android:layout_width="fill_parent" 
-        android:id="@+id/itemText"
-        android:textColor="#000000">
+        android:id="@+id/itemText2"
+        android:textSize="20dip"
+        android:textColor="#FF7F50">
     </TextView>
 </LinearLayout>
