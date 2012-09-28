@@ -1,12 +1,14 @@
 package com.example.hello;
 
+import java.util.List;
+
 public class RestaurantDetail {
 	
 	private int num;
 	private String name, time, phone, address, describe;
-
-	public RestaurantDetail(String name, int num, String time, String phone, String address, String describe) {
-		// TODO Auto-generated constructor stub
+	public List<RestaurantDetail> persons;
+	
+	public RestaurantDetail(String name, int num, String time, String phone, String address, String describe){
 		super();
 		this.num = num;
 		this.name = name;

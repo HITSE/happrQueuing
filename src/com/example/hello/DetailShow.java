@@ -18,11 +18,9 @@ import android.content.DialogInterface;
 
 public class DetailShow extends Activity{
 	
-	String rootPath = "http://192.168.1.128/se/";
-	String rid = "";
-	ListShow page1 = new ListShow();
+	//String rootPath = "http://192.168.17.16/se/";
+	String rootPath = "http://happyqueuing.sinaapp.com/";
 	
-	List<RestaurantDetail> persons;
 	public Button button1;
 	public ListView list = null;
 	List<HashMap<String,String>> mylist = new ArrayList<HashMap<String,String>>();
@@ -50,13 +48,12 @@ public class DetailShow extends Activity{
 	public void updateListView() throws Exception{
 		//获得一个餐厅的详细信息！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
 		
-    	String path = rootPath+"getdetail.php?rid="+page1.rid;
+    	String path = rootPath+"getdetail.php?rid="+getRid.rid;
     	
     	try{
     	List<RestaurantDetail> persons = Network.getJOSN2(path);
-    	
     	String itemTitle[] = {"餐厅名称","排队人数","预计时间","餐厅地址","餐厅电话","餐厅特色"};
-    	String it[] = {"1","2","3","4","5","jdifaodsfjdajfdklasjfkdjaskfjdkjafkjioaerjfkdslfkljdaksfjioaerfkasfkdlajfkjasl"};
+ //   	String it[] = {"1","2","3","4","5","jdifaodsfjdajfdklasjfkdjaskfjdkjafkjioaerjfkdslfkljdaksfjioaerfkasfkdlajfkjasl"};
     	for(int i=0;i<6;i++) {
             HashMap<String, String> map = new HashMap<String, String>();
             map.put("itemTitle2", itemTitle[i]);
@@ -94,7 +91,7 @@ public class DetailShow extends Activity{
 			        	phone_num = input1.getEditableText().toString();
 			        	num_peo = input2.getEditableText().toString();
 			        	//发送信息在这里！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
-			        	String path = rootPath+"postr.php?phone="+phone_num+"&num="+num_peo+"&rid="+page1.rid;
+			        	String path = rootPath+"postr.php?phone="+phone_num+"&num="+num_peo+"&rid="+getRid.rid;
 			        	try {
 							Network.postit(path);
 						} catch (Exception e) {

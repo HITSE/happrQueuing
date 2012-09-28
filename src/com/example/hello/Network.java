@@ -45,7 +45,7 @@ public class Network {
 			String address = item.getString("address");
 			String describe = item.getString("describe");
 			mlist.add(new RestaurantDetail(name, num, time, phone, address, describe));
-		}
+			}
 		return mlist;
 	}
 

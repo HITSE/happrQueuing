@@ -1,16 +1,9 @@
 package com.example.hello;
 
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -24,7 +17,8 @@ import android.widget.TextView;
 
 public class ListShow extends Activity {
 	
-	String rootPath = "http://192.168.1.128/se/";
+	//String rootPath = "http://192.168.17.16/se/";
+	String rootPath = "http://happyqueuing.sinaapp.com/";
 	public String rid = "";
 	
 	List<Restaurant> persons;
@@ -60,9 +54,9 @@ public class ListShow extends Activity {
         list.setOnItemClickListener(new OnItemClickListener(){
         	public void onItemClick(AdapterView<?> parent, View v, int position, long id){
         		rid = persons.get(position).getRid();
-        		
+        		getRid.rid = rid;
         		//Ñ¡Ôñ²ÍÌüÀ²£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡
-        		String path = rootPath+"getdetail.php?rid="+rid;
+        		String path = rootPath+"getdetail.php?rid="+getRid.rid;
         		try {
 					Network.postit(path);
 				} catch (Exception e) {

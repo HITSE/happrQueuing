@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="@string/join" />
+        android:text="@string/join"
+        android:textColor="#ff0088" />
 
     <ListView
         android:id="@+id/MyListView" 
