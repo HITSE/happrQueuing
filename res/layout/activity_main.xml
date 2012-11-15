@@ -2,24 +2,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
-    
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/MyListView"
-        android:layout_alignRight="@+id/MyListView"
         android:text="@string/hello_world"
         android:textColor="#ff00ff"
-        android:textSize="18dip"
-        />
-    
+        android:textSize="18dip" />
+
     <ListView
-        android:id="@+id/MyListView" 
-        android:layout_below="@+id/textView1"
+        android:id="@+id/MyListView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content">
+        android:layout_below="@+id/textView1" >
     </ListView>
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/refresh"
+        android:textSize="16dip"
+        android:textColor="#32cd32" />
 
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/tosignup"
+        android:textSize="16dip"
+        android:textColor="#ff0000" />
+
+</RelativeLayout>

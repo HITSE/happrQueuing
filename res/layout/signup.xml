@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/editText4"
+            android:layout_marginTop="52dp"
+            android:layout_toRightOf="@+id/textView4"
+            android:ems="10" />
+        
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editText3"
+            android:layout_alignBottom="@+id/editText3"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="19dp"
+            android:text="登陆账号:"
+            android:textColor="#daa520"
+            android:textSize="16dip" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText3"
+            android:layout_marginTop="28dp"
+            android:layout_toRightOf="@+id/textView5"
+            android:ems="10"
+            android:password="true" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editText4"
+            android:layout_alignBottom="@+id/editText4"
+            android:layout_alignLeft="@+id/textView4"
+            android:text="登录密码:"
+            android:textColor="#daa520"
+            android:textSize="16dip" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editText4"
+            android:layout_below="@+id/editText4"
+            android:layout_marginTop="28dp"
+            android:text="@string/signup"
+            android:textSize="16dip" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button4"
+            android:layout_alignBottom="@+id/button4"
+            android:layout_marginLeft="28dp"
+            android:layout_toRightOf="@+id/button4"
+            android:text="@string/exit"
+            android:textSize="16dip" />
+    </RelativeLayout>
+
+</LinearLayout>
