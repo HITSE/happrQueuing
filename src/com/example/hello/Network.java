@@ -103,10 +103,17 @@ public class Network {
 	// ---------------------------------------------------------------------------------------
 
 	public static void postit(String path) throws Exception {
-		HttpGet request = new HttpGet(path);
+/*		HttpGet request = new HttpGet(path);
 		HttpResponse response = (HttpResponse) new DefaultHttpClient()
 				.execute(request);
 		if (response.getStatusLine().getStatusCode() == 200) {
-		}
+		}*/
+		
+		String json = jsonString(path);
+		JSONArray array = new JSONArray(json);
+
+		JSONObject item = array.getJSONObject(0);
+		Message.answer2 = item.getInt("answer");
+
 	}
 }

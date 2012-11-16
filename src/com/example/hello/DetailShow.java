@@ -128,13 +128,15 @@ public class DetailShow extends Activity {
 										+ "m/add?phone=" + phone_num
 										+ "&num=" + num_peo + "&rid="
 										+ Message.rid;
-								try {
+								/*try {
 									Network.postit(path);
 									update();
 								} catch (Exception e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
-								}
+								}*/
+								
+								showReply(path);
 							}
 						})
 				.setNegativeButton(R.string.cancel,
@@ -161,6 +163,32 @@ public class DetailShow extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	private void showReply(String path){
+		try {
+			Network.postit(path);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		final AlertDialog.Builder sucess = new AlertDialog.Builder(DetailShow.this);
+		sucess.setTitle(R.string.app_name);
+		if (Message.answer2 == 1){
+			sucess.setMessage(R.string.sucess3);
+		}
+		else{
+			sucess.setMessage(R.string.failed3);
+		}
+		sucess.setPositiveButton(R.string.OK,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+					}
+				}).create().show();
+		
+		update();
 	}
 
 }
