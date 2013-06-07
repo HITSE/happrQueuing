@@ -8,9 +8,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -103,12 +100,7 @@ public class Network {
 	// ---------------------------------------------------------------------------------------
 
 	public static void postit(String path) throws Exception {
-/*		HttpGet request = new HttpGet(path);
-		HttpResponse response = (HttpResponse) new DefaultHttpClient()
-				.execute(request);
-		if (response.getStatusLine().getStatusCode() == 200) {
-		}*/
-		
+
 		String json = jsonString(path);
 		JSONArray array = new JSONArray(json);
 

@@ -6,7 +6,7 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
-
+
         <EditText
             android:id="@+id/editText3"
             android:layout_width="200dp"
@@ -15,7 +15,7 @@
             android:layout_marginTop="52dp"
             android:layout_toRightOf="@+id/textView4"
             android:ems="10" />
-        
+
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             android:layout_marginLeft="19dp"
             android:text="登陆账号:"
             android:textColor="#daa520"
-            android:textSize="16dip" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/editText4"
@@ -50,7 +50,7 @@
             android:layout_alignLeft="@+id/textView4"
             android:text="登录密码:"
             android:textColor="#daa520"
-            android:textSize="16dip" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/button4"
@@ -60,7 +60,7 @@
             android:layout_below="@+id/editText4"
             android:layout_marginTop="28dp"
             android:text="@string/signup"
-            android:textSize="16dip" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/button5"
@@ -71,7 +71,7 @@
             android:layout_marginLeft="28dp"
             android:layout_toRightOf="@+id/button4"
             android:text="@string/exit"
-            android:textSize="16dip" />
+            android:textSize="16sp" />
     </RelativeLayout>
 
 </LinearLayout>

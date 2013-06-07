@@ -15,7 +15,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 public class ListShow extends Activity {
 
@@ -23,19 +22,17 @@ public class ListShow extends Activity {
 
 	List<Restaurant> restaurant;
 	private ListView list;
-	private TextView mTextView1;
-	private Button mButton;
-	private Button mButton7;
+	private Button refresh;
+	private Button signIn;
 	List<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
 	private SimpleAdapter adapter;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.page1);
 		list = (ListView) findViewById(R.id.MyListView);
-		mTextView1 = (TextView) findViewById(R.id.textView1);
-		mButton = (Button) findViewById(R.id.button2);
-		mButton7 = (Button) findViewById(R.id.button7);
+		refresh = (Button) findViewById(R.id.button2);
+		signIn = (Button) findViewById(R.id.button7);
 
 		try {
 			updateListView();
@@ -45,14 +42,14 @@ public class ListShow extends Activity {
 		}
 
 		list.setOnItemClickListener(new OnItemClickListener() {
+			//单击某个餐厅条目后跳转到该餐厅详细信息界面
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
 
 				rid = restaurant.get(position).getRid();
 				Message.rid = rid;
-				// 选择餐厅啦！！！！！！！！！！！！！！！！！！！
-				String path = Message.rootPath + "m/show?id="
-						+ Message.rid;
+				// 选择餐厅啦
+				String path = Message.rootPath + "m/show?id=" + Message.rid;
 				try {
 					Network.postit(path);
 				} catch (Exception e) {
@@ -66,7 +63,8 @@ public class ListShow extends Activity {
 			}
 		});
 
-		mButton.setOnClickListener(new Button.OnClickListener() {
+		refresh.setOnClickListener(new Button.OnClickListener() {
+			//刷新界面
 			public void onClick(View v) {
 				try {
 					int size = mylist.size();
@@ -82,8 +80,9 @@ public class ListShow extends Activity {
 				}
 			}
 		});
-		
-		mButton7.setOnClickListener(new Button.OnClickListener() {
+
+		signIn.setOnClickListener(new Button.OnClickListener() {
+			//跳转到登陆界面
 			public void onClick(View v) {
 				Intent intent = new Intent();
 				intent.setClass(ListShow.this, SignUp.class);
@@ -94,6 +93,7 @@ public class ListShow extends Activity {
 	}
 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		//判断是否按下了回退键，若是则弹出对话框确认是否退出
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
 			Exit();
 			return true;
@@ -103,7 +103,7 @@ public class ListShow extends Activity {
 	}
 
 	private void updateListView() throws Exception {
-		// 获得所有餐厅！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+		// 获得所有餐厅信息
 		String path = Message.rootPath + "m/list";
 
 		try {
@@ -113,17 +113,11 @@ public class ListShow extends Activity {
 			for (int i = 0; i < restaurant.size(); i++) {
 				HashMap<String, String> map = new HashMap<String, String>();
 				map.put("itemTitle", restaurant.get(i).getName());
-				map.put("itemText", "排了"+restaurant.get(i).getNum().toString()
-						+"人了,大约要等"+restaurant.get(i).getTime());
+				map.put("itemText", "排了"
+						+ restaurant.get(i).getNum().toString() + "人了,大约要等"
+						+ restaurant.get(i).getTime());
 				mylist.add(map);
 			}
-			/*
-			 * String it[] = { "永福小吃", "吴记酱骨", "王吉小吃", "李记酱骨" }; String a[] = {
-			 * "4", "5", "13", "8" }; for(int i = 0;i<4;i++){ HashMap<String,
-			 * String> map = new HashMap<String, String>();
-			 * map.put("itemTitle",it[i]); map.put("itemText", a[i]);
-			 * mylist.add(map); }
-			 */
 
 			adapter = new SimpleAdapter(this, mylist, R.layout.myitem,
 					new String[] { "itemTitle", "itemText" }, new int[] {
@@ -135,6 +129,7 @@ public class ListShow extends Activity {
 	}
 
 	private void Exit() {
+		//退出軟件，弹出对话框
 		final AlertDialog.Builder exit = new AlertDialog.Builder(ListShow.this);
 		exit.setTitle(R.string.app_name);
 		exit.setMessage(R.string.reallyexit);
